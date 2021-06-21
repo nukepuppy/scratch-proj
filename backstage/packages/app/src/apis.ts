@@ -1,7 +1,7 @@
 import { AnyApiFactory, configApiRef, createApiFactory } from '@backstage/core';
 import { ScmIntegrationsApi, scmIntegrationsApiRef } from '@backstage/integration-react';
 import { costInsightsApiRef } from "@backstage/plugin-cost-insights";
-import {CostInsightsClient, costInsightsClient} from './CostInsightClient.ts';
+import {CostInsightsClient} from './CostInsightClient';
 
 /*
 export const apis: AnyApiFactory[] = [

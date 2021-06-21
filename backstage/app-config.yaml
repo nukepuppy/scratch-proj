@@ -58,6 +58,28 @@ scaffolder:
     token: ${GITHUB_TOKEN}
     visibility: public # or 'internal' or 'private'
 
+costInsights:
+  engineerCost: 10000
+  products:
+    productA:
+      name: Some cloud product
+      icon: storage
+    ProductB:
+      name: Another day another cloud
+      icon: data
+    ProductC:
+      name: Beyond the clouds
+      icon: storage
+# metrics optional
+#  metrics:
+#    metricA:
+#      name: Metric A
+#      default: true
+#    metricB:
+#      name: Metric B
+#    metricC:
+#      name: Metric C
+
 catalog:
   rules:
     - allow: [Component, System, API, Group, User, Resource, Location]
