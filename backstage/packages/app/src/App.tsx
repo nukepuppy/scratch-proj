@@ -24,11 +24,23 @@ import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { Root } from './components/Root';
+// auth provider
+import { githubAuthApiRef, SignInProviderConfig, SignInPage } from '@backstage/core';
+
 // cost insights
 import { CostInsightsPage} from "@backstage/plugin-cost-insights";
 
 const app = createApp({
   apis,
+  components: {
+    SignInPage: props => (
+        <SignInPage
+            {...props}
+            auto
+            providers={['guest', githubProvider]}
+            />
+    ),
+  },
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -44,6 +56,15 @@ const app = createApp({
 
 const AppProvider = app.getProvider();
 const AppRouter = app.getRouter();
+
+// github provider
+
+const githubProvider: SignInProviderConfig = {
+    id:'github-auth-provider',
+    title:'GitHub',
+    message:'Sign in using GitHub',
+    apiRef: githubAuthApiRef,
+}
 
 const routes = (
   <FlatRoutes>
