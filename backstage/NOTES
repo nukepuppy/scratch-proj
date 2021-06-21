@@ -1,0 +1,14 @@
+
+
+needed to do an Oauth app in github with proper callback urls
+
+https://roadie.io/blog/github-auth-backstage/
+
+this then required exporting proper env variables
+
+
+
+
+export AUTH_GITHUB_CLIENT_ID='XXXXXXXX"
+export AUTH_GITHUB_CLIENT_SECRET='XOXOXOOXOX'
+
