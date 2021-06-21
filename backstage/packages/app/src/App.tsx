@@ -37,7 +37,7 @@ const app = createApp({
         <SignInPage
             {...props}
             auto
-            providers={['guest', githubProvider]}
+            provider={githubProvider}
             />
     ),
   },
